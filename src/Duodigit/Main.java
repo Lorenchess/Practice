@@ -30,11 +30,9 @@ public class Main {
             set.add(arr);
         }
 
-        for (int i = 0; i < num.length(); i++) {
-           if (set.size() > 2) {
-               System.out.println("n");
-               return "n";
-           }
+        if (set.size() > 2) {
+            System.out.println("n");
+            return "n";
         }
         System.out.println("y");
         return "y";

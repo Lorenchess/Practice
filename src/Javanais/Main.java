@@ -7,7 +7,7 @@ public class Main {
          * Unless the vowel is preceded by another vowel.
          **/
         System.out.println(translate("This is an example for your employee"));
-        //System.out.println(isVowel('A'));
+
     }
 
     public static boolean isVowel(char c) {
@@ -18,7 +18,7 @@ public class Main {
       boolean isPreviousVowel = false;
       String result = "";
       for (int i =0; i < text.length(); i++) {
-          if (isVowel(text.charAt(i)) &&  !isPreviousVowel )
+          if (isVowel(text.charAt(i)) && !isPreviousVowel )
               result += "av";
           result += text.charAt(i);
           isPreviousVowel = isVowel(text.charAt(i));
