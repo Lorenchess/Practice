@@ -1,5 +1,8 @@
 package Duodigit;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Main {
     public static void main(String[] args) {
         /**
@@ -8,28 +11,30 @@ public class Main {
          *  Return y or n
          * *
          **/
-//        isDuoDigit(102);
-//        isDuoDigit(-33333);
-//        isDuoDigit(-2021);
+        isDuoDigit(-33333);
+        isDuoDigit(-2021);
         isDuoDigit(1);
         isDuoDigit(102);
-        isDuoDigit(-2021);
+        isDuoDigit(12121);
+        isDuoDigit(121);
 
 
     }
     public static String isDuoDigit(int number) {
-        //boolean duoDigit = false;
         Math.abs(number);
-        int counter = 1;
+
+        Set<Character> set = new HashSet<>();
+
         String num = Integer.toString(number);
-        for (int i = 0; i < num.length()-1; i++) {
-            if (num.charAt(i) != num.charAt(i+1)){
-                counter++;
-                if (counter > 2) {
-                    System.out.println("n");
-                    return "n";
-                }
-            }
+        for (char arr : num.toCharArray()) {
+            set.add(arr);
+        }
+
+        for (int i = 0; i < num.length(); i++) {
+           if (set.size() > 2) {
+               System.out.println("n");
+               return "n";
+           }
         }
         System.out.println("y");
         return "y";

@@ -12,12 +12,12 @@ public class Main {
     public static String translate(String text) {
         char[] vowels= new char[] {'a', 'e', 'i', 'o', 'u'};
         String parasitic = "av";
-        String a= "a";
+        String o= "o";
         for (int i = 0; i < text.length();i++) {
-            for (int j = i; j < vowels.length -1; j++){
-                if (text.charAt(i) == vowels[j] && vowels[j] != vowels[j + 1]){
-                    String newText = text.replace(a, "av");
-                    System.out.println(newText);
+            for (int j = i; j < vowels.length-1; j++){
+                if (text.charAt(i) == vowels[j] && text.charAt(i + 1) != vowels[j]) {
+                    String text1 = text.replace(o, "avo");
+                    System.out.println(text1);
                     return "parasitic";
                 }
             }
